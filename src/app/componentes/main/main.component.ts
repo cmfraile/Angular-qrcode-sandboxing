@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor( private _ac:ActivatedRoute ) { }
-
-  ngOnInit(): void {
+  constructor( private _ac:ActivatedRoute ){
     this._ac.params.subscribe(console.log);
   }
+
+  ngOnInit(): void {}
 
 }
