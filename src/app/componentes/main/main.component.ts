@@ -9,25 +9,30 @@ import { Enlace } from 'src/app/clases/enlace';
 })
 export class MainComponent implements OnInit {
 
-  datosqr:string = '';
-  datosenlace:any;
+  qrstring:string = '';
+  qrdata:any;
   cargaprevia:boolean = false;
   
   constructor( private _ac:ActivatedRoute ){
 
+
     this._ac.params.subscribe( (params:Params) => {
+      console.log(params);
       const { id } = params;
       if(id){
-        this.datosqr = id ; this.cargaprevia = true;
+        this.qrstring = id ; this.cargaprevia = true;
         const enlace = new Enlace(id);
-        this.datosenlace = enlace.info;
-      }else{
+        this.qrdata = enlace.info;
+      }
+      /*
+      else{
         setInterval(() => {
           const enlace = new Enlace();
-          this.datosenlace = enlace.info;
-          this.datosqr = enlace.link;
-        },3000)
+          this.qrdata = enlace.info
+          this.qrstring = enlace.link;
+        },5000)
       }
+      */
     });
 
   }
