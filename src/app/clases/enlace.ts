@@ -1,9 +1,11 @@
 import { v4 } from 'uuid';
 import { random as _ru } from 'underscore';
-import { SHA256 } from 'crypto-js';
-const hex2ascii = require('hex2ascii');
+import * as cjs from 'crypto-js';
+require('dotenv').config();
 
 export class Enlace {
+    
+    private key:string = '9e3427cee6e1441645c2b307b31517524fc2a1b2b1e073649e'
     
     private matchid:string;
     private matchpass:string;
@@ -11,7 +13,7 @@ export class Enlace {
     
     constructor(code?:string){
         if(code){
-            const { matchid , matchpass , player } = hex2ascii(code);
+            const { matchid , matchpass , player } = cjs.SHA256.
             this.matchid = matchid ; this.matchpass = matchpass ; this.jugador = player;
         }else{
             this.matchid = v4();

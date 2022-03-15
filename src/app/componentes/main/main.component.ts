@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
   cargaprevia:boolean = false;
   
   constructor( private _ac:ActivatedRoute ){
+
     this._ac.params.subscribe( (params:Params) => {
       const { id } = params;
       if(id){
