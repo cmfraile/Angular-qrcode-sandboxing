@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 import { random as _ru } from 'underscore';
-import Cryptr from 'cryptr';
+const Cryptr = require('cryptr');
 
 const criptoestancia = new Cryptr('f4bb229208278c0b5a70aa268c35ac22dbde9fc820ed43acf7');
 
