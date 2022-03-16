@@ -1,5 +1,8 @@
 import { v4 } from 'uuid';
 import { random as _ru } from 'underscore';
+import Cryptr from 'cryptr';
+
+const criptoestancia = new Cryptr('f4bb229208278c0b5a70aa268c35ac22dbde9fc820ed43acf7');
 
 export class Enlace {
     
@@ -9,7 +12,7 @@ export class Enlace {
     
     constructor(code?:string){
         if(code){
-            const { matchid , matchpass , player } = JSON.parse(code);
+            const { matchid , matchpass , player } = JSON.parse(criptoestancia.decrypt(code));
             this.matchid = matchid ; this.matchpass = matchpass ; this.jugador = player;
         }else{
             this.matchid = v4();
