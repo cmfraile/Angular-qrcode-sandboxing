@@ -24,7 +24,6 @@ export class MainComponent implements OnInit {
         const enlace = new Enlace(id);
         this.qrdata = enlace.info;
       }
-      /*
       else{
         setInterval(() => {
           const enlace = new Enlace();
@@ -32,7 +31,6 @@ export class MainComponent implements OnInit {
           this.qrstring = enlace.link;
         },5000)
       }
-      */
     });
 
   }
