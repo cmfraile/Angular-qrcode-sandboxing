@@ -1,6 +1,5 @@
 import { v4 } from 'uuid';
 import { random as _ru } from 'underscore';
-import {enc} from 'crypto-js';
 
 export class Enlace {
     
